@@ -1,0 +1,17 @@
+####{BSB GENERATED: NO EDIT
+B lib/bs
+FLG -open MyBlog
+FLG -ppx '/home/thomas/Code/web/reason/next-reason-stack/node_modules/bs-platform/lib/bsppx.exe -bs-jsx 3'
+S /home/thomas/Code/web/reason/next-reason-stack/node_modules/bs-platform/lib/ocaml
+B /home/thomas/Code/web/reason/next-reason-stack/node_modules/bs-platform/lib/ocaml
+FLG -nostdlib
+FLG -w -30-40+6+7+27+32..39+44+45+101
+S /home/thomas/Code/web/reason/next-reason-stack/node_modules/reason-react/lib/ocaml
+B /home/thomas/Code/web/reason/next-reason-stack/node_modules/reason-react/lib/ocaml
+S pages
+B lib/bs/pages
+S src/components
+B lib/bs/src/components
+S src/bindings
+B lib/bs/src/bindings
+####BSB GENERATED: NO EDIT}
