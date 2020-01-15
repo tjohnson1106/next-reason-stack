@@ -1,3 +1,8 @@
+import React from "react";
+import App from "next/app";
+
+const Page = require("../src/components/Page/Page.bs").make;
+
 class NextReasonStack extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
@@ -9,7 +14,11 @@ class NextReasonStack extends App {
   }
   render() {
     const { Component, pageProps } = this.props;
-    return <Component {...pageProps} />;
+    return (
+      <Page>
+        <Component {...pageProps} />
+      </Page>
+    );
   }
 }
 

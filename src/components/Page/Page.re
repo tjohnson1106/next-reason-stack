@@ -1,3 +1,5 @@
+[%bs.raw {|require("bulma")|}];
+
 [@react.component]
 let make = (~children) => {
   <>
@@ -8,5 +10,7 @@ let make = (~children) => {
       />
       <title> {React.string("Bracket Factory")} </title>
     </Next.Head>
+    <Navbar />
+    children
   </>;
 };

@@ -2,15 +2,18 @@
 
 import * as React from "react";
 import * as Head from "next/head";
+import * as Navbar$MyBlog from "./Navbar.bs.js";
+
+((require("bulma")));
 
 function Page(Props) {
-  Props.children;
+  var children = Props.children;
   return React.createElement(React.Fragment, undefined, React.createElement(Head.default, {
                   children: null
                 }, React.createElement("meta", {
                       content: "width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover",
                       name: "viewport"
-                    }), React.createElement("title", undefined, "Bracket Factory")));
+                    }), React.createElement("title", undefined, "Bracket Factory")), React.createElement(Navbar$MyBlog.make, { }), children);
 }
 
 var make = Page;
@@ -19,4 +22,4 @@ export {
   make ,
   
 }
-/* react Not a pure module */
+/*  Not a pure module */
