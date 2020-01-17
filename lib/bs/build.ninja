@@ -13,18 +13,26 @@ g_lib_incls = -I . -I src/bindings -I src/components/Page -I pages -I /home/thom
 rule build_ast_from_re
   command = $bsc  $warnings -color always -bs-jsx 3 $bsc_flags -o $out -bs-syntax-only -bs-binary-ast $in
   description = [34mBuilding[39m [2m${out}[22m
-build  pages/hello.reast : build_ast_from_re $src_root_dir/pages/hello.re
+build  pages/about.reast : build_ast_from_re $src_root_dir/pages/about.re
 rule build_deps
-  command = $bsdep -hash a2c81ee3d99fc80c068e6fd94c08dad6 $g_ns -g $bsb_dir_group $in
+  command = $bsdep -hash 3a4d2474a069c273379646871cb06942 $g_ns -g $bsb_dir_group $in
   restat = 1
   description = [34mBuilding[39m [2m${out}[22m
-build  pages/hello.d : build_deps pages/hello.reast
+build  pages/about.d : build_deps pages/about.reast
 rule ml_cmj_cmi
   command = $bsc -nostdlib $g_pkg_flg -color always -bs-suffix $g_lib_incls -I $g_std_incl $warnings $bsc_flags -o $out $in
   dyndep = $in_e.d
   restat = 1
   description = [34mBuilding[39m [2m${out}[22m
-build  pages/hello-MyBlog.cmj |  pages/hello-MyBlog.cmi $src_root_dir/pages/hello.bs.js : ml_cmj_cmi pages/hello.reast ||  pages/hello.d
+build  pages/about-MyBlog.cmj |  pages/about-MyBlog.cmi $src_root_dir/pages/about.bs.js : ml_cmj_cmi pages/about.reast ||  pages/about.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:pages
+build  pages/index.reast : build_ast_from_re $src_root_dir/pages/index.re
+build  pages/index.d : build_deps pages/index.reast
+build  pages/index-MyBlog.cmj |  pages/index-MyBlog.cmi $src_root_dir/pages/index.bs.js : ml_cmj_cmi pages/index.reast ||  pages/index.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output es6:pages
+build  pages/contact.reast : build_ast_from_re $src_root_dir/pages/contact.re
+build  pages/contact.d : build_deps pages/contact.reast
+build  pages/contact-MyBlog.cmj |  pages/contact-MyBlog.cmi $src_root_dir/pages/contact.bs.js : ml_cmj_cmi pages/contact.reast ||  pages/contact.d
   g_pkg_flg = $g_pkg_flg  -bs-package-output es6:pages
 build  src/components/Page/Page.reast : build_ast_from_re $src_root_dir/src/components/Page/Page.re
 build  src/components/Page/Page.d : build_deps src/components/Page/Page.reast
