@@ -1,3 +1,4 @@
+// raw js insert
 [%bs.raw {|require("bulma")|}];
 
 [@react.component]

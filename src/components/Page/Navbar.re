@@ -1,3 +1,5 @@
+open NavbarStyles;
+
 [@react.component]
 let make = () => {
   <nav className="hero-head">
