@@ -2,25 +2,105 @@
 
 import * as Css from "bs-css/src/Css.js";
 
-var subtitle = Css.style(/* :: */[
-      Css.color(Css.rgba(255, 255, 255, 0.7)),
-      /* :: */[
-        Css.fontWeight(Css.bold),
-        /* :: */[
-          Css.marginTop(Css.px(13)),
-          /* :: */[
-            Css.marginLeft(Css.px(10)),
+var subtitle = Css.merge(/* :: */[
+      Css.style(/* :: */[
+            Css.color(Css.rgba(255, 255, 255, 0.7)),
             /* :: */[
-              Css.important(Css.marginBottom(Css.px(0))),
-              /* [] */0
+              Css.fontWeight(Css.bold),
+              /* :: */[
+                Css.marginTop(Css.px(13)),
+                /* :: */[
+                  Css.marginLeft(Css.px(10)),
+                  /* :: */[
+                    Css.important(Css.marginBottom(Css.px(0))),
+                    /* [] */0
+                  ]
+                ]
+              ]
             ]
-          ]
+          ]),
+      /* :: */[
+        "subtitle",
+        /* [] */0
+      ]
+    ]);
+
+var navbarBrand = Css.merge(/* :: */[
+      Css.style(/* :: */[
+            Css.fontFamily("Open sans, Helvetica Neue, Arial, sans-serif"),
+            /* [] */0
+          ]),
+      /* :: */[
+        "navbar-brand",
+        /* [] */0
+      ]
+    ]);
+
+var topNavStyles = Css.merge(/* :: */[
+      Css.style(/* :: */[
+            Css.background(Css.rgb(0, 107, 198)),
+            /* [] */0
+          ]),
+      /* :: */[
+        "navbar",
+        /* :: */[
+          "main-title",
+          /* [] */0
         ]
       ]
     ]);
 
+var navbarMenu = Css.merge(/* :: */[
+      Css.style(/* :: */[
+            Css.paddingTop(Css.px(0)),
+            /* [] */0
+          ]),
+      /* :: */[
+        "navbar-menu",
+        /* [] */0
+      ]
+    ]);
+
+var navbarItem = Css.merge(/* :: */[
+      Css.style(/* :: */[
+            Css.background(Css.rgb(0, 107, 100)),
+            /* :: */[
+              Css.color(Css.rgb(242, 242, 242)),
+              /* [] */0
+            ]
+          ]),
+      /* :: */[
+        "navbar-item",
+        /* [] */0
+      ]
+    ]);
+
+function navbarBurger(menuIsActive) {
+  return Css.merge(/* :: */[
+              Css.style(/* :: */[
+                    Css.color(Css.rgba(255, 255, 255, 0.7)),
+                    /* [] */0
+                  ]),
+              /* :: */[
+                menuIsActive ? "is-active" : "",
+                /* :: */[
+                  "navbar-burger",
+                  /* :: */[
+                    "burger",
+                    /* [] */0
+                  ]
+                ]
+              ]
+            ]);
+}
+
 export {
   subtitle ,
+  navbarBrand ,
+  topNavStyles ,
+  navbarMenu ,
+  navbarItem ,
+  navbarBurger ,
   
 }
 /* subtitle Not a pure module */

@@ -3,19 +3,19 @@ open NavbarStyles;
 [@react.component]
 let make = () => {
   <nav className="hero-head">
-    <nav id="topnav" className="navbar main-title">
+    <nav id="topnav" className=topNavStyles>
       <div className="container">
-        <div className="navbar-brand">
+        <div className=navbarBrand>
           <Next.Link href="/">
-            <a className="subtitle">
-              {ReasonReact.string("BracketFactory")}
-            </a>
-          </Next.Link>
-          <span className="navbar-burger burger">
-            <span />
-            <span />
-            <span />
-          </span>
+            // custom styles - from NavbarStyles - implementation
+
+              <a className=subtitle>
+                {ReasonReact.string(
+                   "Up and running from Reason React and NextJS",
+                 )}
+              </a>
+            </Next.Link>
+          <span className=navbarBurger> <span /> <span /> <span /> </span>
         </div>
         <div id="navbarMenu" className="navbar-menu">
           <div className="navbar-end">

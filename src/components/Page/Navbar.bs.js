@@ -2,22 +2,23 @@
 
 import * as React from "react";
 import * as Link from "next/link";
+import * as NavbarStyles$MyBlog from "./NavbarStyles.bs.js";
 
 function Navbar(Props) {
   return React.createElement("nav", {
               className: "hero-head"
             }, React.createElement("nav", {
-                  className: "navbar main-title",
+                  className: NavbarStyles$MyBlog.topNavStyles,
                   id: "topnav"
                 }, React.createElement("div", {
                       className: "container"
                     }, React.createElement("div", {
-                          className: "navbar-brand"
+                          className: NavbarStyles$MyBlog.navbarBrand
                         }, React.createElement(Link.default, {
                               href: "/",
                               children: React.createElement("a", {
-                                    className: "subtitle"
-                                  }, "BracketFactory")
+                                    className: NavbarStyles$MyBlog.subtitle
+                                  }, "Up and running from Reason React and NextJS")
                             }), React.createElement("span", {
                               className: "navbar-burger burger"
                             }, React.createElement("span", undefined), React.createElement("span", undefined), React.createElement("span", undefined))), React.createElement("div", {
