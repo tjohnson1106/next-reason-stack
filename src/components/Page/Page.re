@@ -13,5 +13,6 @@ let make = (~children) => {
     </Next.Head>
     <Navbar />
     children
+    <Footer />
   </>;
 };
