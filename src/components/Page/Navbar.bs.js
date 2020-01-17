@@ -20,22 +20,22 @@ function Navbar(Props) {
                                     className: NavbarStyles$MyBlog.subtitle
                                   }, "Up and running from Reason React and NextJS")
                             }), React.createElement("span", {
-                              className: "navbar-burger burger"
+                              className: "navbar-burger"
                             }, React.createElement("span", undefined), React.createElement("span", undefined), React.createElement("span", undefined))), React.createElement("div", {
-                          className: "navbar-menu",
+                          className: NavbarStyles$MyBlog.navbarMenu,
                           id: "navbarMenu"
                         }, React.createElement("div", {
                               className: "navbar-end"
                             }, React.createElement("div", {
-                                  className: "navbar-item"
+                                  className: NavbarStyles$MyBlog.navbarItem
                                 }, React.createElement(Link.default, {
                                       href: "/about",
                                       children: React.createElement("a", undefined, "About")
                                     })), React.createElement("div", {
-                                  className: "navbar-item"
+                                  className: NavbarStyles$MyBlog.navbarItem
                                 }, React.createElement(Link.default, {
                                       href: "/contact",
-                                      children: React.createElement("a", undefined, "contact")
+                                      children: React.createElement("a", undefined, "Contact")
                                     })))))));
 }
 

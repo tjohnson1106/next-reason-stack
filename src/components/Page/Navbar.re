@@ -15,18 +15,19 @@ let make = () => {
                  )}
               </a>
             </Next.Link>
-          <span className=navbarBurger> <span /> <span /> <span /> </span>
+          /* TODO implement <span className=navbarBurger> below */
+          <span className="navbar-burger"> <span /> <span /> <span /> </span>
         </div>
-        <div id="navbarMenu" className="navbar-menu">
+        <div id="navbarMenu" className=navbarMenu>
           <div className="navbar-end">
-            <div className="navbar-item">
+            <div className=navbarItem>
               <Next.Link href="/about">
                 <a> {ReasonReact.string("About")} </a>
               </Next.Link>
             </div>
-            <div className="navbar-item">
+            <div className=navbarItem>
               <Next.Link href="/contact">
-                <a> {ReasonReact.string("contact")} </a>
+                <a> {ReasonReact.string("Contact")} </a>
               </Next.Link>
             </div>
           </div>

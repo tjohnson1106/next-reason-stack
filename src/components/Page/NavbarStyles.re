@@ -1,6 +1,9 @@
 open Css;
 
-// corresponds to existing CSS classnames in Navbar
+let linkStyle = selector("a", [color(rgb(242, 242, 242))]);
+let linkHover = selector("a:hover", [borderBottom(px(1), solid, white)]);
+
+// corresponds below to existing CSS classnames in Navbar(originally implemented with Bulma tags)
 
 let subtitle =
   merge([
@@ -27,7 +30,12 @@ let navbarMenu = merge([style([paddingTop(px(0))]), "navbar-menu"]);
 
 let navbarItem =
   merge([
-    style([background(rgb(0, 107, 100)), color(rgb(242, 242, 242))]),
+    style([
+      background(rgb(0, 107, 198)),
+      color(rgb(242, 242, 242)),
+      linkStyle,
+      linkHover,
+    ]),
     "navbar-item",
   ]);
 

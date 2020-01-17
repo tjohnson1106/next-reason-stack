@@ -2,6 +2,16 @@
 
 import * as Css from "bs-css/src/Css.js";
 
+var linkStyle = Css.selector("a", /* :: */[
+      Css.color(Css.rgb(242, 242, 242)),
+      /* [] */0
+    ]);
+
+var linkHover = Css.selector("a:hover", /* :: */[
+      Css.borderBottom(Css.px(1), Css.solid, Css.white),
+      /* [] */0
+    ]);
+
 var subtitle = Css.merge(/* :: */[
       Css.style(/* :: */[
             Css.color(Css.rgba(255, 255, 255, 0.7)),
@@ -63,10 +73,16 @@ var navbarMenu = Css.merge(/* :: */[
 
 var navbarItem = Css.merge(/* :: */[
       Css.style(/* :: */[
-            Css.background(Css.rgb(0, 107, 100)),
+            Css.background(Css.rgb(0, 107, 198)),
             /* :: */[
               Css.color(Css.rgb(242, 242, 242)),
-              /* [] */0
+              /* :: */[
+                linkStyle,
+                /* :: */[
+                  linkHover,
+                  /* [] */0
+                ]
+              ]
             ]
           ]),
       /* :: */[
@@ -95,6 +111,8 @@ function navbarBurger(menuIsActive) {
 }
 
 export {
+  linkStyle ,
+  linkHover ,
   subtitle ,
   navbarBrand ,
   topNavStyles ,
@@ -103,4 +121,4 @@ export {
   navbarBurger ,
   
 }
-/* subtitle Not a pure module */
+/* linkStyle Not a pure module */
