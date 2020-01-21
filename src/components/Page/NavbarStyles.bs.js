@@ -60,16 +60,21 @@ var topNavStyles = Css.merge(/* :: */[
       ]
     ]);
 
-var navbarMenu = Css.merge(/* :: */[
-      Css.style(/* :: */[
-            Css.paddingTop(Css.px(0)),
-            /* [] */0
-          ]),
-      /* :: */[
-        "navbar-menu",
-        /* [] */0
-      ]
-    ]);
+function navbarMenu(menuIsActive) {
+  return Css.merge(/* :: */[
+              Css.style(/* :: */[
+                    Css.paddingTop(Css.px(0)),
+                    /* [] */0
+                  ]),
+              /* :: */[
+                menuIsActive ? "is-active" : "",
+                /* :: */[
+                  "navbar-menu",
+                  /* [] */0
+                ]
+              ]
+            ]);
+}
 
 var navbarItem = Css.merge(/* :: */[
       Css.style(/* :: */[

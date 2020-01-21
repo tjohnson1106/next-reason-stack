@@ -1,7 +1,24 @@
 open NavbarStyles;
 
+type state = {menuIsActive: bool};
+
+type action =
+  | ToggleMenu;
+
 [@react.component]
 let make = () => {
+  let (state, dispatch) =
+    React.useReducer(
+      (state, action) =>
+        switch (action) {
+        | ToggleMenu => {
+            //  opposite of current state
+            menuIsActive: !state.menuIsActive,
+          }
+        },
+      {menuIsActive: false},
+    );
+
   <nav className="hero-head">
     <nav id="topnav" className=topNavStyles>
       <div className="container">
@@ -16,9 +33,13 @@ let make = () => {
               </a>
             </Next.Link>
           /* TODO implement <span className=navbarBurger> below */
-          <span className="navbar-burger"> <span /> <span /> <span /> </span>
+          <span className={navbarBurger(state.menuIsActive)}>
+            <span />
+            <span />
+            <span />
+          </span>
         </div>
-        <div id="navbarMenu" className=navbarMenu>
+        <div id="navbarMenu" className={navbarMenu(state.menuIsActive)}>
           <div className="navbar-end">
             <div className=navbarItem>
               <Next.Link href="/about">

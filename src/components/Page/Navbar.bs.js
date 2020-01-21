@@ -5,6 +5,14 @@ import * as Link from "next/link";
 import * as NavbarStyles$MyBlog from "./NavbarStyles.bs.js";
 
 function Navbar(Props) {
+  var match = React.useReducer((function (state, action) {
+          return {
+                  menuIsActive: !state.menuIsActive
+                };
+        }), {
+        menuIsActive: false
+      });
+  var state = match[0];
   return React.createElement("nav", {
               className: "hero-head"
             }, React.createElement("nav", {
@@ -20,9 +28,9 @@ function Navbar(Props) {
                                     className: NavbarStyles$MyBlog.subtitle
                                   }, "Up and running from Reason React and NextJS")
                             }), React.createElement("span", {
-                              className: "navbar-burger"
+                              className: NavbarStyles$MyBlog.navbarBurger(state.menuIsActive)
                             }, React.createElement("span", undefined), React.createElement("span", undefined), React.createElement("span", undefined))), React.createElement("div", {
-                          className: NavbarStyles$MyBlog.navbarMenu,
+                          className: NavbarStyles$MyBlog.navbarMenu(state.menuIsActive),
                           id: "navbarMenu"
                         }, React.createElement("div", {
                               className: "navbar-end"

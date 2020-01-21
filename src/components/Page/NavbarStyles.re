@@ -26,7 +26,14 @@ let navbarBrand =
 let topNavStyles =
   merge([style([background(rgb(0, 107, 198))]), "navbar", "main-title"]);
 
-let navbarMenu = merge([style([paddingTop(px(0))]), "navbar-menu"]);
+let navbarMenu = (menuIsActive: bool) =>
+  merge([
+    style([paddingTop(px(0))]),
+    {
+      menuIsActive ? "is-active" : "";
+    },
+    "navbar-menu",
+  ]);
 
 let navbarItem =
   merge([
