@@ -33,7 +33,9 @@ let make = () => {
               </a>
             </Next.Link>
           /* TODO implement <span className=navbarBurger> below */
-          <span className={navbarBurger(state.menuIsActive)}>
+          <span
+            className={navbarBurger(state.menuIsActive)}
+            onClick={_event => dispatch(ToggleMenu)}>
             <span />
             <span />
             <span />
